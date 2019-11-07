@@ -1,0 +1,68 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+.Item{
+  display:flex;
+  padding: 20px;
+  background-color: rgb(221, 240, 247);
+  width: 30%;
+  margin:auto;
+  position: relative;
+  align-items: center;
+}
+.Item__button{
+  background-color: transparent;
+  border:none;
+  position: absolute;
+  right: 20px;
+  font-size: 24px;
+  top:20px;
+}
+.Item__checkbox--active{
+  border:solid 2px rgba(255,0,0,1);
+  border-radius:5px;
+  width: 20px;
+  height:20px;
+  margin-right: 10px;
+  transition: ease 0.3s;
+}
+.Item__checkbox--active:hover{
+  border:solid 2px rgb(0, 128, 0,1);
+  box-shadow: 0px 0px 5px 0px rgb(0, 128, 0,1);
+}
+.Item__checkbox--inactive{
+  border:solid 2px rgb(97, 153, 172);
+  background-color: transparent;
+  border-radius:5px;
+  width: 20px;
+  height:20px;
+  margin-right: 10px;
+  transition: ease 0.3s;
+}
+.Item__checkbox--inactive:hover{
+  border:solid 2px rgba(255,0,0,1);
+  box-shadow: 0px 0px 5px 0px rgba(255,0,0,1);
+}
+.line{
+  text-decoration: line-through;
+}
+.Item__form{
+  display:flex;
+  align-items: center;
+}
+.Item__form-input{
+  font-size: 24px;
+  background-color: transparent;
+  border:none;
+}
+.Item__form-input::first-letter {
+  text-transform: uppercase;
+}
+.Item__form-button--active{
+  background-color: transparent;
+  font-size: 24px;
+  border:none;
+  color:rgb(82, 172, 202);
+}
+.Item__form-button--hidden{
+  display:none;
+}

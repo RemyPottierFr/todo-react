@@ -1,22 +1,42 @@
-.App {
+.App{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.App__form{
+  width: 30%;
+  position: relative;
+  margin:auto;
+  display:flex;
+  padding-top: 25px;
+  margin-bottom: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App__form-input:hover{
+  box-shadow: 0px 0px 5px 0px lightblue;
+  transition: ease 0.3s;
 }
-
-.App-link {
-  color: #09d3ac;
+.App__form-input{
+  padding: 10px;
+  border:none;
+  border-bottom:solid 2px lightblue;
+  width: 100%;
+  font-size: 24px;
+  border-radius:5px;
+  transition:ease 0.3s
+}
+.App__form-button{
+  position: absolute;
+  right: 15px;
+  top:35px;
+  border:none;
+  background-color: transparent;
+  font-size: 24px;
+  color:lightblue;
+}
+.App__title{
+  font-size: 56px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color:lightblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
 }
