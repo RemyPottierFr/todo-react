@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Item.css'
 
 export default function Item ({id,content,deleteItem,changeItem}){
-  const [lineThrough = false, changeLineThrough] = useState();
-  const [valueInput = content, changeValueInput] = useState();
-  const [edition = false, editionStatus] = useState();
+  const [lineThrough, changeLineThrough] = useState(false);
+  const [valueInput, changeValueInput] = useState(content);
+  const [edition, editionStatus] = useState(false);
   let toggleLineThrough = () => {
     changeLineThrough(!lineThrough)
   };
@@ -24,10 +24,10 @@ export default function Item ({id,content,deleteItem,changeItem}){
       </div>
       <form className="Item__form">
         <input 
-          className={ lineThrough ? "Item__form-input line" : "Item__form-input" } 
-          name="input" 
-          type="text" 
-          value={valueInput} 
+          className={ lineThrough ? "Item__form-input line" : "Item__form-input" }
+          name="input"
+          type="text"
+          value={valueInput}
           onChange={(e) => {
             changeValueInput(e.target.value)
             editionStatus(true)
@@ -36,7 +36,7 @@ export default function Item ({id,content,deleteItem,changeItem}){
         <button 
           className={ edition ? "Item__form-button--active" : "Item__form-button--hidden" } 
           onClick={e => {
-            changeItem(e,id,valueInput)
+            valueInput !== "" ? changeItem(e,id,valueInput.trim()) : deleteItem(e,id);
             editionStatus(false)
           }}>
           <i className="far fa-check-circle"></i>
