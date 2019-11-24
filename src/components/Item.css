@@ -4,7 +4,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   display:flex;
   padding: 20px;
   background-color: rgb(221, 240, 247);
-  width: 30%;
+  width: 50%;
   margin:auto;
   position: relative;
   align-items: center;
@@ -24,10 +24,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   height:20px;
   margin-right: 10px;
   transition: ease 0.3s;
+  text-align: center;
+  color:red;
 }
 .Item__checkbox--active:hover{
   border:solid 2px rgb(0, 128, 0,1);
   box-shadow: 0px 0px 5px 0px rgb(0, 128, 0,1);
+  color:green;
 }
 .Item__checkbox--inactive{
   border:solid 2px rgb(97, 153, 172);
@@ -51,6 +54,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 .Item__form-input{
   font-size: 24px;
+  padding-left: 5px;
   background-color: transparent;
   border:none;
 }
@@ -65,4 +69,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 .Item__form-button--hidden{
   display:none;
+}
+.fa-check{
+  font-size: 22px;
 }

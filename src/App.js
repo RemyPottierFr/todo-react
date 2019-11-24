@@ -1,30 +1,31 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Item from './components/Item'
 
 export default function App () {
-  const [list=[], changeList] = useState()
-  const [valueInput = "", changeValueInput] = useState()
+  const [list, changeList] = useState([]);
+  const [valueInput, changeValueInput] = useState("");
 
-  let renderList = () => {
-    return list.map((content,index) => {
-      return <Item id={index} content={content} deleteItem={deleteItem} changeItem={changeItem}/>
-    })
-  }
+  useEffect (()=>{
+    if(localStorage.getItem('list')){
+      changeList(localStorage.getItem('list').split(","))
+    }
+  },[])
 
   let addList = (e,valueInput) => {
     e.preventDefault()
-    changeList([...list,valueInput])
+    const newValue= [...list,valueInput] ;
+    changeList(newValue)
     changeValueInput("")
+    localStorage.setItem('list',newValue.join(','))
   }
 
-  let deleteItem = (e) => {
+  let deleteItem = (e,id) => {
     e.preventDefault()
     const array = list
-    console.log("target id",e.target)
-    array.splice(e.target.id,1)
-    console.log("array",array)
+    array.splice(id,1)
     changeList([...array])
+    localStorage.setItem('list',array.join(','))
   }
 
   let changeItem = (e,index,newValue) =>{
@@ -32,6 +33,7 @@ export default function App () {
     const array = list 
     array.splice(index,1,newValue)
     changeList([...array])
+    localStorage.setItem("list",array.join(','))
   }
 
   return (
@@ -41,7 +43,12 @@ export default function App () {
         <input className="App__form-input" name="input" type="text" value={valueInput} onChange={e => changeValueInput(e.target.value)}/>
         <button className="App__form-button" onClick={e => addList(e,valueInput)}><i className="fas fa-location-arrow"></i></button>
       </form>
-      {renderList()}
+      {
+        list !== [""] ?
+        list.map((content,index) => {
+          return <Item key={content} id={index} content={content} deleteItem={deleteItem} changeItem={changeItem}/>
+    }):<p>pop</p>
+  }
     </div>
   );
 }

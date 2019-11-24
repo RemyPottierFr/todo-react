@@ -1,8 +1,11 @@
+body{
+  background-color: rgb(59, 56, 56);
+}
 .App{
   text-align: center;
 }
 .App__form{
-  width: 30%;
+  width: 50%;
   position: relative;
   margin:auto;
   display:flex;
@@ -17,6 +20,7 @@
   padding: 10px;
   border:none;
   border-bottom:solid 2px lightblue;
+  background-color: rgb(59, 56, 56);
   width: 100%;
   font-size: 24px;
   border-radius:5px;
